@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <ion-item>
+              <ion-icon name="person"></ion-icon>
+              <ion-label>{{utenteLog}}</ion-label>
+            </ion-item>
+          </ion-col>
+          <!-- <ion-col size="3">
+            <ion-item>
+              <ion-label>Total Ore:</ion-label>
+              <ion-label>{{totalOre}}</ion-label>
+              <ion-icon name="logo-euro" size="small"></ion-icon>
+              <ion-label>{{euro}}</ion-label>
+            </ion-item>
+          </ion-col> -->
+        </ion-row>
+      </ion-grid>
+
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<!-- List of Text Items -->
+<ion-item-divider>
+  <ion-label>
+    <h1>{{meseCorrente}}</h1>
+    
+  </ion-label>
+
+
+</ion-item-divider>
+<ion-list>
+  <ion-item *ngFor="let ora of ore">
+    <ion-label>
+
+        <ion-label>
+          <ion-row>
+            <ion-col size="10">
+              <h6 style="color:gray"> {{ora.date | date: 'dd/MM/yyyy'}}</h6>
+            </ion-col>
+            <ion-col size="2">
+              <!-- <ion-icon name="close" style="color:red"></ion-icon> -->
+              <!-- <button  (click)="presentAlertConfirm(ora)"> <ion-icon name="trash"  style="color:red"></ion-icon></button> -->
+             
+            </ion-col>
+          </ion-row>
+        </ion-label>
+
+      <ion-grid>
+       
+ 
+                
+        <ion-row>
+    
+          <ion-col size="10" >
+            <h6 style="color:gray">{{ora.listaPostiLavoro.indirizzo}}</h6>
+          </ion-col>
+          <ion-col size="2">
+            <h6 style="color:gray"> {{ora.numero_ore}}</h6>
+          </ion-col>
+    
+        </ion-row>
+      </ion-grid>
+    </ion-label>
+  </ion-item>
+</ion-list>
+</ion-content>
+
+
+
+
+
+
