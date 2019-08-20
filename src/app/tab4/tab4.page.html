@@ -1,15 +1,15 @@
 <ion-header>
-    <ion-toolbar>
-      <ion-title>
-        <ion-grid>
-          <ion-row>
-            <ion-col size="12">
-              <ion-item>
-                <ion-icon name="person"></ion-icon>
-                <ion-label>{{utenteLog}}</ion-label>
-              </ion-item>
-            </ion-col>
-            <!-- <ion-col size="3">
+  <ion-toolbar>
+    <ion-title>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <ion-item>
+              <ion-icon name="person"></ion-icon>
+              <ion-label>{{utenteLog}}</ion-label>
+            </ion-item>
+          </ion-col>
+          <!-- <ion-col size="3">
               <ion-item>
                 <ion-label>Total Ore:</ion-label>
                 <ion-label>{{totalOre}}</ion-label>
@@ -17,25 +17,25 @@
                 <ion-label>{{euro}}</ion-label>
               </ion-item>
             </ion-col> -->
-          </ion-row>
-        </ion-grid>
-  
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
-  
-  <ion-content>
-  <!-- List of Text Items -->
-  <ion-item-divider>
+        </ion-row>
+      </ion-grid>
+
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let item2 of listaForMese">
+    <!-- List of Text Items -->
+    <ion-item-divider *ngIf="item2.records.length>0" style="background-color: #009d00">
       <ion-label>
-        <h1>{{meseCorrente}}</h1>
-        
+        <h1 style="color: black">{{item2.Mese}}</h1>
       </ion-label>
     </ion-item-divider>
-  <ion-list>
-    <ion-item *ngFor="let item of listaArrayOre">
-      <ion-label>
-  
+    <ion-list>
+      <ion-item *ngFor="let item of item2.records">
+        <ion-label>
+
           <ion-label>
             <ion-row>
               <ion-col size="10">
@@ -45,26 +45,24 @@
               </ion-col>
             </ion-row>
           </ion-label>
-  
-        <ion-grid>
-          <ion-row>
-            <ion-col size="9" >
-              <h6 style="color:gray">Total Ore : {{item['total-ore']}} </h6>
-            </ion-col>
-            <ion-col size="3">
-              
-              <h6 style="color:gray"> <ion-icon name="logo-euro" size="small"></ion-icon> <span class="total-euro">{{item['total-euro']}}</span></h6>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-label>
-    </ion-item>
-  </ion-list>
-  </ion-content>
-  
-  
-  
-  
-  
-  
-  
+
+          <ion-grid>
+            <ion-row>
+              <ion-col size="9">
+                <h6 style="color:gray">Total Ore : {{item['total-ore']}} </h6>
+              </ion-col>
+              <ion-col size="3">
+
+                <h6 style="color:gray">
+                  <ion-icon name="logo-euro" size="small"></ion-icon> <span
+                    class="total-euro">{{item['total-euro']}}</span>
+                </h6>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>
